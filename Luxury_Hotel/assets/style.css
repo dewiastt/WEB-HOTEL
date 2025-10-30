@@ -1,0 +1,721 @@
+/* ==========================
+   GLOBAL STYLE
+========================== */
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+}
+
+.text-gold {
+    color: #d4af37 !important;
+}
+
+.btn-gold {
+    background-color: #d4af37;
+    color: #fff;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-gold:hover {
+    background-color: #b8962e;
+    color: #fff;
+}
+
+/* ==========================
+   HERO SECTION - Style
+========================== */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: #fff;
+    background: url('../assets/foto/hotel.jpg') center center/cover no-repeat;
+    background-attachment: fixed; 
+    background-size: cover;
+    overflow: hidden;
+}
+
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom right,
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.3)
+    );
+    z-index: 1;
+}
+
+/* Soft motion blur overlay for cinematic feel */
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(2px);
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    padding-left: 6%;
+    max-width: 700px;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    line-height: 1.2;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.hero .btn {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border-radius: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.hero .btn-outline-light:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+/* Optional subtle scroll hint (like Swissôtel homepage) */
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    color: #fff;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.scroll-indicator i {
+    display: block;
+    font-size: 1.5rem;
+    animation: bounce 1.8s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(8px); }
+    60% { transform: translateY(4px); }
+}
+
+/* ==========================
+   NAVBAR
+========================== */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    backdrop-filter: blur(5px);
+}
+
+.navbar-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #d4af37 !important;
+    letter-spacing: 1px;
+}
+
+.nav-link {
+    color: #f5f5f5 !important;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: #d4af37 !important;
+}
+
+    .btn-login {
+        background: rgba(0, 0, 0, 0.7) !important;
+        color: white !important;
+        border: 1px solid rgba(255, 255, 255, 0.3) !important;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+    .btn-login:hover {
+        background: rgba(0, 0, 0, 0.9) !important;
+        border-color: #d4af37 !important;
+        color: #d4af37 !important;
+    }
+
+    .btn-register {
+        background: #d4af37 !important;
+        color: white !important;
+        border: none !important;
+        font-weight: 500;
+    }
+    .btn-register:hover {
+        background: #b8962e !important;
+    }
+/* ==========================
+   FACILITIES SECTION
+========================== */
+.facility-card {
+    background: #222;
+    border-radius: 15px;
+    transition: all 0.4s ease;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
+}
+
+.facility-card:hover {
+    transform: translateY(-8px);
+    background: #2e2e2e;
+}
+
+.icon-circle {
+    background-color: #d4af37;
+    color: #fff;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem auto;
+}
+
+
+/* ===== HERO ROOMS ===== */
+.hero-rooms {
+    position: relative;
+    height: 65vh;
+    min-height: 500px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url('../assets/foto/hotel.jpg') center center / cover no-repeat;
+    background-attachment: fixed;
+    transform: scale(1.05);
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.4));
+    z-index: 2;
+}
+
+.hero-rooms .container { z-index: 3; }
+
+/* ===== ROOM CARD - Bersih & Elegan ===== */
+.room-card {
+    transition: all 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.room-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+}
+
+.room-img-wrapper {
+    height: 180px;
+    overflow: hidden;
+}
+
+.room-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.room-card:hover .room-img {
+    transform: scale(1.08);
+}
+
+/* Search Bar */
+.search-bar form {
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.search-bar input {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.search-bar button {
+    border-radius: 0 50px 50px 0 !important;
+}
+
+/* Carousel Navigation */
+.carousel-control-prev, .carousel-control-next {
+    width: 5%;
+    background: rgba(0,0,0,0.3);
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-image: none;
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: white;
+}
+
+.carousel-control-prev-icon::before { content: "\f053"; }
+.carousel-control-next-icon::before { content: "\f054"; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-rooms { height: 55vh; }
+    .hero-rooms h1 { font-size: 2.2rem; }
+    .carousel-item .col-lg-3 { flex: 0 0 85%; }
+}
+
+/* ==========================
+   GLOBAL STYLE
+========================== */
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+}
+
+.text-gold {
+    color: #d4af37 !important;
+}
+
+.btn-gold {
+    background-color: #d4af37;
+    color: #fff;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-gold:hover {
+    background-color: #b8962e;
+    color: #fff;
+}
+
+/* ==========================
+   HERO SECTION - Style
+========================== */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: #fff;
+    background: url('../assets/foto/hotel.jpg') center center/cover no-repeat;
+    background-attachment: fixed; 
+    background-size: cover;
+    overflow: hidden;
+}
+
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom right,
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.3)
+    );
+    z-index: 1;
+}
+
+/* Soft motion blur overlay for cinematic feel */
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(2px);
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    padding-left: 6%;
+    max-width: 700px;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    line-height: 1.2;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.hero .btn {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border-radius: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.hero .btn-outline-light:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+/* Optional subtle scroll hint (like Swissôtel homepage) */
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    color: #fff;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.scroll-indicator i {
+    display: block;
+    font-size: 1.5rem;
+    animation: bounce 1.8s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(8px); }
+    60% { transform: translateY(4px); }
+}
+
+/* ==========================
+   NAVBAR
+========================== */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    backdrop-filter: blur(5px);
+}
+
+.navbar-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: #d4af37 !important;
+    letter-spacing: 1px;
+}
+
+.nav-link {
+    color: #f5f5f5 !important;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: #d4af37 !important;
+}
+
+/* ==========================
+   FACILITIES SECTION
+========================== */
+.facility-card {
+    background: #222;
+    border-radius: 15px;
+    transition: all 0.4s ease;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
+}
+
+.facility-card:hover {
+    transform: translateY(-8px);
+    background: #2e2e2e;
+}
+
+.icon-circle {
+    background-color: #d4af37;
+    color: #fff;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem auto;
+}
+
+
+/* ===== HERO ROOMS ===== */
+.hero-rooms {
+    position: relative;
+    height: 65vh;
+    min-height: 500px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url('../assets/foto/hotel.jpg') center center / cover no-repeat;
+    background-attachment: fixed;
+    transform: scale(1.05);
+    z-index: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.4));
+    z-index: 2;
+}
+
+.hero-rooms .container { z-index: 3; }
+
+/* ===== NAVBAR - SATU UNTUK SEMUA HALAMAN ===== */
+.navbar {
+    background: transparent !important;
+    transition: all 0.4s ease;
+    padding: 1.rem 0;
+    z-index: 1000;
+}
+
+.navbar.scrolled {
+    background: rgba(0, 0, 0, 0.95) !important;
+    backdrop-filter: blur(10px);
+    padding: 0.7rem 0;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.2);
+}
+
+.navbar-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+}
+
+.nav-link {
+    color: #150404 !important;
+    font-weight: 500;
+    margin: 0 12px;
+    position: relative;
+    transition: 0.3s;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #d4af37;
+    transition: 0.3s;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 70%;
+}
+
+.btn-gold {
+    background: #d4af37;
+    color: white;
+    border: none;
+    font-weight: 500;
+}
+
+.btn-gold:hover {
+    background: #b8962e;
+    color: white;
+}
+
+/* Mobile */
+@media (max-width: 992px) {
+    .navbar-collapse {
+        background: rgba(0,0,0,0.95);
+        margin-top: 1rem;
+        padding: 1rem;
+        border-radius: 10px;
+    }
+    .nav-link {
+        margin: 8px 0;
+    }
+}
+
+
+/* ==========================
+   FOOTER
+========================== */
+footer {
+    background-color: #111;
+    color: #f6f3f3;
+    padding: 60px 0;
+    font-size: 0.95rem;
+}
+
+footer h5 {
+    color: #d4af37;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+footer a {
+    color: #aaa;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #fff;
+}
+
+/* ==========================
+   MEDIA QUERIES
+========================== */
+@media (max-width: 992px) {
+    .hero {
+        text-align: center;
+        justify-content: center;
+        background-attachment: scroll; /* disable parallax for mobile */
+    }
+
+    .hero-content {
+        padding-left: 0;
+        padding: 0 2rem;
+    }
+
+    .hero h1 {
+        font-size: 2.7rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .facility-card {
+        padding: 2rem 1rem;
+    }
+}
+
+/* Live Search */
+#liveSearch {
+    transition: all 0.3s;
+}
+
+#liveSearch:focus {
+    box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.25) !important;
+}
+
+/* Result Count */
+#resultCount {
+    font-size: 0.9rem;
+}
+
+/* No Results */
+#noResults {
+    font-style: italic;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .d-flex.gap-2 {
+        flex-direction: column;
+    }
+    .form-select {
+        width: 100% !important;
+    }
+}
+
+/* ==========================
+   FOOTER
+========================== */
+footer {
+    background-color: #111;
+    color: #ccc;
+    padding: 60px 0;
+    font-size: 0.95rem;
+}
+
+footer h5 {
+    color: #d4af37;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+footer a {
+    color: #aaa;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #fff;
+}
+
+/* ==========================
+   MEDIA QUERIES
+========================== */
+@media (max-width: 992px) {
+    .hero {
+        text-align: center;
+        justify-content: center;
+        background-attachment: scroll; /* disable parallax for mobile */
+    }
+
+    .hero-content {
+        padding-left: 0;
+        padding: 0 2rem;
+    }
+
+    .hero h1 {
+        font-size: 2.7rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .btn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .facility-card {
+        padding: 2rem 1rem;
+    }
+}
